@@ -108,6 +108,5 @@ public class TrainPacman {
 
         System.out.print(memDistance.toString());
         System.out.print(cacheChoice.toString());
-
     }
 }
