@@ -87,7 +87,7 @@ public class TrainPacman {
 
             for (int j = i+loopSize; j < trainingData.size(); j++) {
                 Integer address2 = trainingData.get(j);
-                if (address1 <= address2+100 && address1 >= address2-100) {
+                if (address1 <= address2+10 && address1 >= address2-10) {
                     int optDistance = j-i;
                     memDistance.put(i, optDistance);
 
@@ -98,6 +98,10 @@ public class TrainPacman {
                     else {
                         cacheChoice.put(i, "LRU");
                     }
+                }
+                // possible third case evict immediately scenario
+                else {
+                    cacheChoice.put(i, "MRU");
                 }
             }
         }
