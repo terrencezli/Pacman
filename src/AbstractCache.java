@@ -31,13 +31,12 @@ public abstract class AbstractCache implements CacheInterface {
     }
 
     public Object get(Object key) {
-
         Object value = m_cacheMap.get(key);
         if (value != null) {
             hitAccess(key);
-            System.out.println("hit: " + key.toString());
+            //System.out.println("hit: " + key.toString());
         } else {
-            System.out.println("miss: " + key.toString());
+            //System.out.println("miss: " + key.toString());
         }
 
         return value;
@@ -50,14 +49,12 @@ public abstract class AbstractCache implements CacheInterface {
     }
 
     public Object put(Object key, Object val) {
-
         if (m_cacheMaxSize > 0) {
             if (size() >= m_cacheMaxSize)
                 evict();
             putAccess(key);
 
-            System.out.println("put: " + key.toString());
-
+            //System.out.println("put: " + key.toString());
             return m_cacheMap.put(key, val);
         }
         return null;
@@ -68,7 +65,6 @@ public abstract class AbstractCache implements CacheInterface {
     protected abstract void putAccess(Object key);
 
     public List<Object> removeValues(Object value) {
-
         List<Object> removed = new ArrayList<Object>();
         Iterator<Object> iter = m_cacheMap.keySet().iterator();
         while (iter.hasNext()) {
