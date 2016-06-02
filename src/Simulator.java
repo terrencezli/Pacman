@@ -10,8 +10,6 @@ public class Simulator {
         test.get(1);
         test.put(4, 4);
 
-
-
     }
 
 }

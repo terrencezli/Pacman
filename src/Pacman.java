@@ -26,14 +26,14 @@ public class Pacman {
         Scanner scan = new Scanner(testFile);
         while (scan.hasNext()) {
             int addr = scan.nextInt();
-            if (cache[loopIndex] == addr) {
-                cacheHit++;
-            } else {
-                cacheMiss++;
-                //has MRU...evict MRU
-                cache[loopIndex] = addr;
-            }
-            loopIndex++;
+            //if (cache[loopIndex] == addr) {
+            //    cacheHit++;
+            //} else {
+            //    cacheMiss++;
+            //    //has MRU...evict MRU
+            //    cache[loopIndex] = addr;
+            //}
+            //loopIndex++;
         }
     }
 }
